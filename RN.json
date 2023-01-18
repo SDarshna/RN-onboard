@@ -1,0 +1,31 @@
+[  
+     {
+    "name":"RN-FW",
+    "folder":"Remote Networks",
+    "license_type":"FWAAS-AGGREGATE",
+    "region":"us-east-1",
+    "spn_name":"us-east-anthemis",
+    "ipsec_tunnel":"RN-Tunnel",
+    "subnets":["10.23.2.0/24"],
+    "ecmp_load_balancing":"disable"
+    },
+    {
+    "name":"RN-FW2",
+    "folder":"Remote Networks",
+    "license_type":"FWAAS-AGGREGATE",
+    "region":"us-east-1",
+    "spn_name":"us-central-kiwi",
+    "ipsec_tunnel":"RN-Tunnel2",
+    "subnets":["172.16.0.2/31"],
+    "protocol":{
+        "bgp":{
+            "enable":true,
+            "peer_as":"65100",
+            "peer_ip_address":"172.16.0.2",
+            "local_ip_address":"172.16.0.3",
+            "do_not_export_routes":true
+            }
+        },
+    "ecmp_load_balancing":"disable"
+ }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "name":"IKE-GW",
+        "folder":"Remote Networks",
+        "local_address":{"interface":"vlan"},
+        "authentication":{"pre_shared_key":{"key":"paloalto"}},
+        "peer_address":{"dynamic":{}},
+        "local_id":{"type":"ipaddr","id":"1.1.1.1"},
+        "peer_id":{"type":"ipaddr","id":"2.2.2.2"},
+        "protocol":{
+            "version":"ikev2-preferred",
+            "ikev1":
+            {"ike_crypto_profile":"PaloAlto-Networks-IKE-Crypto",
+             "dpd":{"enable":true}},
+            "ikev2":
+            {"dpd":{"enable":true}}
+        },
+        "protocol_common":{"nat_traversal":{"enable":true},
+        "fragmentation":{"enable":false}}
+    },
+        {  
+        "name":"IKE-GW2",
+        "folder":"Remote Networks",
+        "local_address":{"interface":"vlan"},
+        "peer_address":{"dynamic":{}},
+        "authentication":{"pre_shared_key":{"key":"cloudgen!x123"}},
+        "peer_id":{"type":"ufqdn","id":"cgx-tunnel@mycompany.com"},
+        "local_id":{"type":"ufqdn","id":"prisma-tunnel@mycompany.com"},
+        "protocol":{
+            "version":"ikev2",
+            "ikev1":{"dpd":{"enable":true}},
+            "ikev2":{"dpd":{"enable":true},"ike_crypto_profile":"CloudGenix-IKE-Crypto-Default"}
+        },
+        "protocol_common":{"nat_traversal":{"enable":true},
+        "fragmentation":{"enable":false},
+        "passive_mode":true
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "name":"RN-Tunnel",
+        "folder":"Remote Networks",
+        "tunnel_interface":"tunnel",
+        "auto_key":
+            {
+                "ike_gateway":[{"name":"IKE-GW"}],
+                "ipsec_crypto_profile":"PaloAlto-Networks-IPSec-Crypto"
+            },
+        "anti_replay":true
+    },
+    {
+        "name":"RN-Tunnel2",
+        "folder":"Remote Networks",
+        "tunnel_interface":"tunnel",
+        "auto_key":
+            {
+                "ike_gateway":[{"name":"IKE-GW2"}],
+                "ipsec_crypto_profile":"CloudGenix-IPSec-Crypto-Default"
+            },
+            "anti_replay":true,
+            "copy_tos":true,
+            "tunnel_monitor":   
+                {
+                    "enable":true,
+                    "destination_ip":"172.16.0.2"
+                }
+    }
+]
