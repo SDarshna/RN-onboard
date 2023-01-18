@@ -12,5 +12,4 @@ Has the records for the RNs to be created.
 
 
 CLI to run the script:
-python3 RN-onboard.py
-
+./RN-onboard.py -t1 T1-secret.yml
